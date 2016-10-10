@@ -8,6 +8,7 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         
+        <!--ボタン表示-->
         <Button Content="fastControl の表示" Click="fastControl_start"/>
         <Button Content="3Dコントロールの表示" Click="control3d_Start"/>
  
