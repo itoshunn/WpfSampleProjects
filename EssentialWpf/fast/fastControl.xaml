@@ -1,0 +1,31 @@
+﻿<Window x:Class="EssentialWpf.fast.fastControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EssentialWpf.fast"
+        mc:Ignorable="d"
+        Title="fastControl" Height="300" Width="300">
+    <DockPanel>
+        
+        <!-- コントロールの表示 -->
+        <WrapPanel x:Name="_panel" DockPanel.Dock="Top">
+            <Button Content="こんにちわ"/>
+            <Button Content="第２のボタン"/>
+            <TextBox Text="編集可能なボックス" x:Name="_text1"/>
+            <CheckBox Content="{Binding ElementName=_text1, Path=Text}"/>
+            <Slider Width="75" Minimum="0" Maximum="100" Value="50"/>
+        </WrapPanel>
+        
+        <!-- _panel の内容で描画を繰り返す -->
+        <Rectangle Margin="5">
+            <Rectangle.Fill>
+                <VisualBrush
+                    Visual="{Binding ElementName=_panel}"
+                    Viewport="0,0,.5,.2"
+                    TileMode="Tile" />
+            </Rectangle.Fill>
+        </Rectangle>
+        
+    </DockPanel>
+</Window>
